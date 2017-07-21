@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
 
+
   get '/login', to: 'sessions#new'
+
+  resources :posts do 
+    resources :comments, shallow:true
+  end
 
 end

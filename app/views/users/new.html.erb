@@ -1,47 +1,52 @@
-<div class="jumbotron">
-    <h2>Sign Up for Private Access</h2>
-</div>
-<%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-        <div class="error_messages">
-            <h2>Form is invalid</h2>
-            <ul>
-                <% for message in @user.errors.full_messages %>
-                    <li>
-                        <%= message %>
-                    </li>
-                    <% end %>
-            </ul>
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+
+    <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+            <div class="error_messages">
+                <h2>Form is invalid</h2>
+                <ul>
+                    <% for message in @user.errors.full_messages %>
+                        <li>
+                            <%= message %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+        <% end %>
+    <div class = "new_user">
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
         </div>
+
+        <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :birthday %>
+            <%= f.date_field :birthday, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+    </div>
+
+
+    <div class="text-center">
+    <button type="submit" class="btn btn-success" >Create User</button>
     <% end %>
-<div class = "new_user">
-    <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
     </div>
-
-    <div class="field">
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-    </div>
-    <div class="field">
-        <%= f.label :birthday %>
-        <%= f.date_field :birthday %>
-    </div>
-
-    <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-    </div>
-
-    <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-    </div>
+  </div>
 </div>
 
 
-<div>
-<button type="submit" class="btn btn-success" >Create User</button>
-<% end %>
-</div>

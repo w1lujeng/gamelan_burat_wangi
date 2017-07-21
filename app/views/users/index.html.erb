@@ -1,10 +1,18 @@
-<div class="jumbotron"><h2>Members and Birthdays!!</h2></div>
 <p id="notice"><%= notice %></p>
 
-<% @users.each do |user|%>
+<div class="row">
+    <div class="col-md-8">
+      <h2>Members</h2>
+      <% @users.each do |user|%>
   <div>
     <%= user.name %> - 
     <%= format_date user.birthday %>
   </div>
 <% end %>
 <%= link_to 'Sign up', new_user_path %>
+    </div>
+    <div class="col-md-4">
+      <h2>This month's birthdays</h2>
+    </div>
+  </div>
+
