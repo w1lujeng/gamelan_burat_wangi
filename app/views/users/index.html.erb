@@ -2,21 +2,22 @@
 <%= link_to 'Posts', posts_path %> |
 <%= link_to 'Members', users_path %> |
 <%= link_to 'Add new event', new_event_path %> 
-<p id="notice"><%= notice %></p>
 
 <div class="row">
     <div class="col-md-4">
-      <h2>Members</h2>
+      <h3>Members</h3>
       <% @users.each do |user|%>
   <div>
     <%= user.name %> - 
     <%= format_date user.birthday %>
   </div>
 <% end %>
-<%= link_to 'Sign up', new_user_path %>
     </div>
     <div class="col-md-4">
       <h2>This month's birthdays</h2>
+    </div>
+    <div class="col-md-4">
+      <h2>Upcoming Events</h2>
     </div>
   </div>
 
