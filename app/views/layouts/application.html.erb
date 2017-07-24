@@ -9,7 +9,7 @@
   </head>
 
   <body class="container">
-<nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="navcontainer">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -21,28 +21,26 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-           <p>
-  <% if current_user %>
-    Welcome, <%= current_user.name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>  
+            <p>
+              <% if current_user %>
+                Welcome, <%= current_user.name %>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+              <% else %>
+                <%= link_to 'Log In', login_path %>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <%= link_to 'Sign Up', new_user_path %>
+              <% end %>
+
+              
+            </p>  
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
     <div class="jumbotron text-center heading"><h1>Gamelan Burat Wangi</h1></div>
 
-  <%= yield %>
-  <footer class="navbar navbar-default navbar-fixed-bottom">
-      <div class="footercontainer">
-        <p class="text-muted">sign up to be on our mailing list</p>
-      </div>
-    </footer>
+      <%= yield %>
+    
   </body>
 </html>

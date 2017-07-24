@@ -1,0 +1,3 @@
+class Upcoming < ApplicationRecord
+  
+end
