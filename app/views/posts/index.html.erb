@@ -1,5 +1,7 @@
 <h2>Members Area</h2>
-<%= link_to 'Birthdays', users_path %>
+<%= link_to 'Posts', posts_path %> |
+<%= link_to 'Members', users_path %> |
+<%= link_to 'Add new event', new_event_path %> 
 <div class="row">
   <div class="col-xs-4">
     <h4>Create new post</h4>
@@ -9,8 +11,8 @@
         <%= f.text_field :content %>
       </div>
     <% end %>
-  </div>
-  <div class="col-xs-6">
+    </div>
+  <div class="col-xs-4">
     <% if @posts.count == 0 %>
       <h5>No Posts Yet!</h5>
     <% else %>
@@ -30,14 +32,12 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-    <div>
-    
-
-    
+    <% end %> 
   </div>
 
-  
+  <div class="col-xs-4">
+    <h2>Upcoming Events</h2>
+  </div>  
 </div>
 
 

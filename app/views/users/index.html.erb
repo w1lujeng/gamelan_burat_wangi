@@ -1,7 +1,11 @@
+<h2>Members Area</h2>
+<%= link_to 'Posts', posts_path %> |
+<%= link_to 'Members', users_path %> |
+<%= link_to 'Add new event', new_event_path %> 
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-4">
       <h2>Members</h2>
       <% @users.each do |user|%>
   <div>

@@ -1,0 +1,25 @@
+<h2>Members Area</h2>
+<%= link_to 'Posts', posts_path %> |
+<%= link_to 'Members', users_path %> |
+<%= link_to 'Add new event', new_event_path %> 
+<div class="row">
+  <div class="col-xs-4">
+    <h4>Create new event</h4>
+    <%= form_for @event do |f| %>
+      <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :date %>
+        <%= f.text_field :date %>
+      </div>
+    <% end %>
+  </div>
+  
+  
+</div>
+
+
+      
+   
+ 
+

@@ -6,8 +6,10 @@ Rails.application.routes.draw do
  
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :upcoming
+  resources :upcomings
 
+  resources :events
+  
   get '/login', to: 'sessions#new'
 
   resources :posts do 
