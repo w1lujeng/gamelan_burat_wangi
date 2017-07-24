@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  helper_method :format_date
+  helper_method :display_month_birthday
+
   def index
     @users = User.all
     @events = Event.where('date > ?', DateTime.now)
@@ -20,18 +21,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def format_date birthday
-    if !birthday
-      return ''
-    end
-    birthday_arr = birthday.to_s.split('-')
-    puts birthday_arr
-
-    month = birthday_arr[1] 
-    day = birthday_arr[2]
-    return month + '/' + day
-  end
+  
+ 
 
   private
 

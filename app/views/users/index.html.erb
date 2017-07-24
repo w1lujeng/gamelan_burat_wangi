@@ -1,23 +1,46 @@
 <h2>Members Area</h2>
 <%= link_to 'Posts', posts_path %> |
-<%= link_to 'Members', users_path %> |
-<%= link_to 'Add new event', new_event_path %> 
+<%= link_to 'Add new event', new_event_path %> |
+<%= link_to 'Members', users_path %> 
 
-<div class="row">
+  <div class="row">
     <div class="col-md-4">
       <h3>Members</h3>
       <% @users.each do |user|%>
-  <div>
-    <%= user.name %> - 
-    <%= format_date user.birthday %>
-  </div>
-<% end %>
+      <div>
+      <strong><%= user.name %></strong>  
+      </div>
+      <% end %>
     </div>
+
     <div class="col-md-4">
-      <h2>This month's birthdays</h2>
+      <h3>This Month's Birthdays</h3>
+      <% @users.each do |user|%>
+        <% if display_month_birthday(user.birthday) %>
+          <div>
+            <strong><%= user.name %></strong> - 
+          </div>
+          <div>
+            <%= display_month_birthday(user.birthday) %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+
     <div class="col-md-4">
       <h2>Upcoming Events</h2>
-    </div>
+      <% if @events.count == 0 %>
+      <h5>No Events Yet!</h5>
+    <% else %>
+      <% @events.each do |event| %>
+        <div>
+          <strong><%= event.title %></strong>
+        </div>
+        <div>
+            <%= event.date %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>  
   </div>
-
+</div>
