@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
-  resources :users, only: [:new, :create, :index]
+  resources :users, only: [:new, :create, :index, :edit, :update]
  
   resources :sessions, only: [:new, :create, :destroy]
 

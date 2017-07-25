@@ -1,14 +1,38 @@
 <h2>Members Area</h2>
 
 <div class="row">
-  <div class="col-xs-4">
-    <h4>Edit Post</h4>
+  <div class="col-md-4">
+    <h3>Edit Post</h3>
 
     <%= form_for @post do |f| %>
-      <div>
+    
+      <div class="form-group">
         <%= f.label :content %>
-        <%= f.text_field :content %>
+        <%= f.text_field :content, class: "form-control" %>
       </div>
+      <%= f.submit "Edit post", class: "btn btn-success"%>
     <% end %>
   </div>
+  
+  <div class="col-md-4">
+  </div>
+
+  <div class="col-md-4">
+      <h2>Upcoming Events</h2>
+      <% if @events.count == 0 %>
+      <h5>No Events Yet!</h5>
+        <% else %>
+        <% @events.each do |event| %>
+          <div>
+            <strong><%= event.title %></strong>
+          </div>
+          <div>
+              <%= event.date %>
+          </div>
+          
+        <% end %>
+      <% end %>
+  </div>  
+  
+
 </div>

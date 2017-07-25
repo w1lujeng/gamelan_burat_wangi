@@ -1,7 +1,7 @@
 <h2>Members Area</h2>
 
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col-md-4">
     <h3>Create new post</h3>
     <%= form_for @post do |f| %>
       <div class="form-group">
@@ -13,7 +13,7 @@
       </div>
     <% end %>
     </div>
-  <div class="col-xs-4">
+  <div class="col-md-4">
   <br>
   <br>
     <% if @posts.count == 0 %>
@@ -38,21 +38,22 @@
     <% end %> 
   </div>
 
-  <div class="col-xs-4">
-    <h2>Upcoming Events</h2>
-    <% if @events.count == 0 %>
+  <div class="col-md-4">
+      <h2>Upcoming Events</h2>
+      <% if @events.count == 0 %>
       <h5>No Events Yet!</h5>
     <% else %>
       <% @events.each do |event| %>
-          <div>
-            <strong><%= event.title %></strong>
-          </div>
-          <div>
+        <div>
+          <strong><%= event.title %></strong>
+        </div>
+        <div>
             <%= event.date %>
-          </div>
+        </div>
+        
+        <% end %>
       <% end %>
-    <% end %>
-  </div>  
+    </div>  
 </div>
 
 
