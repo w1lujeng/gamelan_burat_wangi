@@ -3,23 +3,19 @@
   <div class="row">
     <div class="col-md-4">
       <h3>Members</h3>
-      <% @users.each do |user|%>
+      <% @users_alphabetical.each do |user|%>
       <div>
-      <strong><%= user.name %></strong>  
-      </div>
-      <div>
-          <%= link_to "edit member", edit_user_path(user), class: "btn btn-xs btn-warning text-right" if user == current_user %>         
-          
-        </div>
+      <strong><%= user.name %></strong>&nbsp; &nbsp;<%= link_to "edit member", edit_user_path(user), class: "btn btn-xs btn-warning text-right" if user == current_user %>
+      </div>  
       <% end %>
     </div>
 
     <div class="col-md-4">
       <h3>This Month's Birthdays</h3>
-      <% @users.each do |user|%>
+      <% @users_birthday.each do |user|%>
         <% if display_month_birthday(user.birthday) %>
           <div>
-            <strong><%= user.name %></strong> - 
+            <strong><%= user.name %></strong> 
           </div>
           <div>
             <%= display_month_birthday(user.birthday) %>
@@ -44,5 +40,6 @@
         <% end %>
       <% end %>
     </div>  
+    
   </div>
 </div>

@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   helper_method :display_month_birthday
 
   def index
-    @users = User.all
-    @events = Event.where('date > ?', DateTime.now)
+    @users_alphabetical = User.all.order(:name)
+    @users_birthday = User.all.order(:birthday)
+    @events = Event.where('date > ?', DateTime.now).order(:date)
   end
   
   def new

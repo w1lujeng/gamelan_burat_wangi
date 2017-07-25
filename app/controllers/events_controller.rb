@@ -1,13 +1,14 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.all
-    @events = Event.where('date > ?', DateTime.now)
+    @events = Event.order(date: :desc)
+    @events = Event.where('date > ?', DateTime.now)    
   end
   
   def new
     @event = Event.new
-    @events = Event.where('date > ?', DateTime.now)
+    @events = Event.where('date > ?', DateTime.now).order(:date)
   end
+  
   def create
     @event = Event.new(event_params)
       if @event.save
