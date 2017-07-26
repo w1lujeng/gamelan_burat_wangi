@@ -22,7 +22,7 @@
       <% @posts.each do |post| %>
         <div class="panel panel-default">
           <div class="panel-heading">
-            
+           <%= post.user.name %> 
             <%= post.created_at.strftime("%b %e, %l:%M %p") %>
           </div>
           <div class="panel-body">
