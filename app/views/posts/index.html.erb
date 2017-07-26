@@ -49,7 +49,7 @@
           <strong><%= event.title %></strong>
         </div>
         <div>
-            <%= event.date %>
+            <%= event.date.strftime("%b %d, %Y") %>
         </div>
         
         <% end %>
