@@ -20,8 +20,9 @@
             <strong><%= user.name %></strong> 
           </div>
           <div>
-            <%= display_month_birthday(user.birthday) %>
+            <%= user.birthday.strftime("%b %d") %>
           </div>
+         
         <% end %>
       <% end %>
     </div>
