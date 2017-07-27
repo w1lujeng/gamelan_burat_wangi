@@ -12,10 +12,15 @@
         <%= f.label :date %>
         <%= f.date_field :date, class: "form-control" %>     
       </div>
+      <div class="form-group">
+        <%= f.label :public, "Is this a public event(concert, workshop, etc) " %>
+        <%= f.check_box :public %>
+      </div>
       <div>
         <%= f.submit "Create Event", class: "btn btn-success"%>
       </div>
     <% end %>
+    
   </div>
 
   <div class="col-md-4">
@@ -36,7 +41,7 @@
         
         <div>
             <%= link_to "edit event", edit_event_path(event), class: "btn btn-xs btn-warning text-right" %>         
-            <%= link_to "delete event", event_path(event), class: "btn btn-xs btn-danger", method: :delete, data: { confirm: "Are you sure you want to delete this event?"} %>
+            <%= link_to "delete event", event_path(event), class: "btn btn-xs btn-danger", method: :delete, data: { confirm: "Are you sure you want to delete this event?" } %>
           </div>
         <% end %>
       <% end %>

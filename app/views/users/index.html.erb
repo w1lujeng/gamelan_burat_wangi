@@ -5,7 +5,7 @@
       <h3>Members</h3>
       <% @users_alphabetical.each do |user|%>
       <div>
-      <%= link_to "X", user_path(user), method: :delete if current_user.admin %>
+      <%= link_to "X", user_path(user), method: :delete if current_user && current_user.admin  %>
       <strong><%= user.name %></strong>&nbsp; &nbsp;<%= link_to "edit member", edit_user_path(user), class: "btn btn-xs btn-warning text-right" if user == current_user %>
       
       </div>  
@@ -31,7 +31,7 @@
       <h3>Upcoming Events</h3>
       <% if @events.count == 0 %>
       <h5>No Events Yet!</h5>
-    <% else %>
+      <% else %>
       <% @events.each do |event| %>
         <div>
           <strong><%= event.title %></strong>

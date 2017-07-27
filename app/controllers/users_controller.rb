@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users_alphabetical = User.all.order(:name)
     @users_birthday = User.all.order(:birthday)
-    @events = Event.where('date > ?', DateTime.now).order(:date)
+    @events = Event.where('date >= ?', DateTime.now).order(:date)
   end
   
   def new

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170726191541) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "public"
+    t.boolean "public", default: false
   end
 
   create_table "posts", force: :cascade do |t|

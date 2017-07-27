@@ -21,7 +21,7 @@ class PostsController < ApplicationController
  
     def edit
       @post = Post.find(params[:id])
-      @events = Event.where('date > ?', DateTime.now)
+      @events = Event.where('date >= ?', DateTime.now)
     end
 
     def update

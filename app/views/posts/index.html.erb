@@ -29,9 +29,9 @@
             <%= post.content %>
           </div>
           <div class="panel-footer">
-            <%= link_to "edit post", edit_post_path(post), class: "btn   btn-xs btn-warning text-right" %>         
+            <%= link_to "edit post", edit_post_path(post), class: "btn   btn-xs btn-warning text-right" if post.user == current_user %>         
             <%= link_to "delete post", post_path(post), class: "btn btn-xs btn-danger", method: :delete, data: { confirm:
-            "Are you sure you want to delete this post?"} %>       
+            "Are you sure you want to delete this post?"} if post.user == current_user %>       
           </div>         
         </div>
       <% end %>
