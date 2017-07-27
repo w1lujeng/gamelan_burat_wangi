@@ -3,7 +3,8 @@ class PostsController < ApplicationController
     def index
       @posts = Post.order(created_at: :desc)
       @post = Post.new
-      @events = Event.where('date > ?', DateTime.now).order(:date)     
+      @events = Event.where('date >= ?', DateTime.now).order(:date) 
+      @photo = Photo.new    
     end
    
     def create

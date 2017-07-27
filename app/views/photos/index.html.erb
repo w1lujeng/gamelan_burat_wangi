@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+ 
+  <div>
+  <div>
+    <h2>Burat Wangi Photo Page</h2>
+      <ul>
+        <% @photos.each do |photo| %>
+            
+            <%= image_tag photo.image.url, class: "medium" %>
+            <br>
+            <br>
+        <% end %>
+      </ul>
+  </div>
+  <div class="col-md-4">
+  </div>
+ </div>

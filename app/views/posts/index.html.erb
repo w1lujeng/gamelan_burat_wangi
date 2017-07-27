@@ -12,7 +12,20 @@
         <%= f.submit "Create Post", class: "btn btn-success"%>
       </div>
     <% end %>
+
+    <h3>Add photos</h3>
+      <div class="form-group">
+        <%= form_for [@photo] do |f| %>
+        <div class="form-group">
+           <%= f.file_field :image, :required => true %>
+        </div>
+        <div class="form-group">
+      <%= f.submit 'Add Photo', class: 'btn btn-primary' %>
+    <% end %>
     </div>
+      </div>
+        </div>
+
   <div class="col-md-4">
   <br>
   <br>
