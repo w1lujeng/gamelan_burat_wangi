@@ -1,29 +1,45 @@
-<div class="row">
-  <div class="col-md-4">
- 
-  <div>
-  <div>
-    <h2>Burat Wangi Photo Page</h2>
-      <ul>
-        <% if @photos.count == 0 %>
-          <h5>No Photos Yet!</h5>
-        <% else %>
-          <% @photos.each do |photo| %>
-              
-              <%= image_tag photo.image.url, class: "medium" %>
-              <%= photo.content %>
-              <div>
-              <br>
-              <%= link_to "edit photo", edit_photo_path(photo), class: "btn   btn-xs btn-warning text-right" if photo.user == current_user %>         
-              <%= link_to "delete photo", photo_path(photo), class: "btn btn-xs btn-danger", method: :delete, data: { confirm:
-              "Are you sure you want to delete this post?"} if photo.user == current_user %>       
-            </div>         
-              <br>
-              <br>
-          <% end %>
-        <% end %>
-      </ul>
-  </div>
-  <div class="col-md-4">
-  </div>
- </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <% @photos.each_with_index do |photo, idx| %>
+                <% if idx % 3 == 0 %>
+                    <div>
+                        <%= image_tag photo.image.url, class: "medium" %>
+                        <br>
+                        <%= photo.content %>
+                        <%= link_to "delete photo", photo_path(photo), class: "btn btn-xs btn-danger", method: :delete, data: { confirm:
+                        "Are you sure you want to delete this photo?"} if photo.user == current_user %>  
+                    </div>
+                <% end %>    
+            <% end %>
+        </div>
+        <div class="col-xs-4">
+            <% @photos.each_with_index do |photo, idx| %>
+                <% if idx % 3 == 1 %>
+                    <div>
+                        <%= image_tag photo.image.url, class: "medium" %>
+                        <br>
+                        <%= photo.content %>
+                        <%= link_to "delete photo", photo_path(photo), class: "btn btn-xs btn-danger", method: :delete, data: { confirm:
+                        "Are you sure you want to delete this photo?"} if photo.user == current_user %>  
+                    </div>
+                <% end %>    
+            <% end %>
+        </div>
+        <div class="col-xs-4">
+            <% @photos.each_with_index do |photo, idx| %>
+                <% if idx % 3 == 2 %>
+                    <div>
+                        <%= image_tag photo.image.url, class: "medium" %>
+                        <br>
+                        <%= photo.content %>
+                        <%= link_to "delete photo", photo_path(photo), class: "btn btn-xs btn-danger", method: :delete, data: { confirm:
+                        "Are you sure you want to delete this photo?"} if photo.user == current_user %>  
+                    </div>
+                <% end %>    
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
