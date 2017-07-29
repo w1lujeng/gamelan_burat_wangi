@@ -10,41 +10,31 @@
   <body class="container">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <% if current_user %>
           <ul class="nav navbar-nav navbar-right">
-        
             <li><%= link_to 'Posts', posts_path %></a></li>
             <li><%= link_to 'Events', new_event_path %></a></li>
             <li><%= link_to 'Members', users_path %></a></li>
             <li><%= link_to 'Photos', photos_path %></a></li>
-          
           </ul>
           <% end %>
       
           <ul class="nav navbar-nav ">
-            <% if current_user %>
-            
-                    <li><p class="navbar-text">Welcome, <%= current_user.name %></p></li>
-                    
-                    <li><%= link_to 'Log Out', session_path('dummy'), method: :delete %></li>
-                  <% else %>
-                    <li><%= link_to 'Log In', login_path %></li>
-                    
-                    <li><%= link_to 'Sign Up', new_user_path %></li>
-                  <% end %>   
+            <% if current_user %>      
+              <li><p class="navbar-text">Welcome, <%= current_user.name %></p></li>
+              <li><%= link_to 'Log Out', session_path('dummy'), method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Log In', login_path %></li>
+              <li><%= link_to 'Sign Up', new_user_path %></li>
+            <% end %>   
           </ul>
 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
   
 </nav>
     <div class="jumbotron text-center heading"><h1>Gamelan Burat Wangi</h1></div>
-
-    <%= yield %>
-    
+    <%= yield %>    
   </body>
 </html>

@@ -4,12 +4,11 @@
     <div class="col-md-4">
       <h3>Members</h3>
       <% @users.each do |user|%>
-      <div>
-      <strong><%= user.name %></strong>  
-      </div>
-      <div>
-          <%= link_to "edit member", edit_user_path(user), class: "btn btn-xs btn-warning text-right" if user == current_user %>         
-          
+        <div>
+          <strong><%= user.name %></strong>  
+        </div>
+        <div>
+            <%= link_to "edit member", edit_user_path(user), class: "btn btn-xs btn-warning text-right" if user == current_user %>             
         </div>
       <% end %>
     </div>
@@ -31,8 +30,8 @@
     <div class="col-md-4">
       <h3>Upcoming Events</h3>
       <% if @events.count == 0 %>
-      <h5>No Events Yet!</h5>
-    <% else %>
+        <h5>No Events Yet!</h5>
+      <% else %>
       <% @events.each do |event| %>
         <div>
           <strong><%= event.title %></strong>

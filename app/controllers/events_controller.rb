@@ -32,7 +32,7 @@ helper_method :is_public
   def edit
       @event = Event.find(params[:id])
       @events = Event.where('date >= ?', DateTime.now)
-    end
+  end
 
   def update
       @events = Event.where('date >= ?', DateTime.now)

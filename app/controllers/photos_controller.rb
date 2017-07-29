@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
       @photo = Photo.find(params[:id])
       @photo.destroy
       redirect_to photos_path
-    end 
+  end 
 
 
   def create
@@ -17,9 +17,10 @@ class PhotosController < ApplicationController
     @photo.user_id = current_user.id
 
     if @photo.save
-      redirect_to :posts
+      redirect_to :photos
     else
       redirect_to :posts
     end
   end
+  
 end

@@ -41,7 +41,20 @@
  }
 
  .medium {
-   max-width: 300px;
-   max-height: 300px;
+   margin: 10px;
+   width: 300px;
    border-radius: 10px;
+   display: inline-block;
  }
+  .caption {
+  max-width: 33%;
+  max-height: 10px;
+
+  }
+
+ .photo_title {
+   text-align: center;
+ }
+
+
+ 

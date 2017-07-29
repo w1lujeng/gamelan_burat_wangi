@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       render :new
-    end
+    end   
   end
 
   def destroy
@@ -35,17 +35,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-      if @user.update_attributes(params.require(:user).permit(:name, :email, :password_digest, :birthday))
-        redirect_to users_path
-      else
-        render :edit
-      end
+    if @user.update_attributes(params.require(:user).permit(:name, :email, :password_digest, :birthday))
+      redirect_to users_path
+    else
+      render :edit
+    end
   end
+
   
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday,:image)
   end
   
 end

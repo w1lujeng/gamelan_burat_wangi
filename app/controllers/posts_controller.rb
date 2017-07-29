@@ -27,11 +27,11 @@ class PostsController < ApplicationController
 
     def update
       @post = Post.find(params[:id])
-        if @post.update_attributes(params.require(:post).permit(:content))
-          redirect_to posts_path
-        else
-          render :edit
-        end
+      if @post.update_attributes(params.require(:post).permit(:content))
+        redirect_to posts_path
+      else
+        render :edit
+      end
     end
 
     private
